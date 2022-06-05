@@ -1,8 +1,9 @@
 import EventList from "../components/events/EventtList";
-import { getFeaturedEvents } from "../dummy-data";
+import { getFeaturedEvents } from "../helpers/apiUtils";
 
-const HomePage = () => {
-  const featuredEvents = getFeaturedEvents();
+const HomePage = (props) => {
+  // const featuredEvents = getFeaturedEvents();
+  const featuredEvents = props.events;
   return (
     <>
       <div className="w-full flex flex-col items-center justify-center">
@@ -14,5 +15,15 @@ const HomePage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const featuredEvents = await getFeaturedEvents();
+  return {
+    props: {
+      events: featuredEvents,
+    },
+    revalidate: 1800
+  };
+}
 
 export default HomePage;

@@ -10,7 +10,6 @@ const EventItem = (props) => {
     month: 'long',
     year: 'numeric'
   })
-  console.log({humanReadableDate})
 
   const formatteAddress = location.replace(', ', '\n');
   const exploreLink = `/events/${id}`;
