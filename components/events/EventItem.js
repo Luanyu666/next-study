@@ -15,7 +15,7 @@ const EventItem = (props) => {
   const exploreLink = `/events/${id}`;
   return (
     <div className="shadow rounded-2xl bg-white flex my-5 gap-2 w-full">
-      <img src={'/' + image} alt={title} className="w-full rounded-l-2xl object-cover h-40" />
+      <Image src={'/' + image} alt={title} width={600} height={100} className="w-full rounded-l-2xl object-cover h-40" />
       <div className="flex flex-col justify-around w-full">
         <div className="flex-1">
           <h2 className="text-3xl font-bold py-2">{title}</h2>
